@@ -23,7 +23,10 @@ const config = {
       '@app/app-logger': path.resolve(__dirname, 'libs/app-logger/src'),
       '@app/app-logger/*': path.resolve(__dirname, 'libs/app-logger/src/*'),
       '@app/auth-utilities': path.resolve(__dirname, 'libs/auth-utilities/src'),
-      '@app/auth-utilities/*': path.resolve(__dirname, 'libs/auth-utilities/src/*'),
+      '@app/auth-utilities/*': path.resolve(
+        __dirname,
+        'libs/auth-utilities/src/*',
+      ),
       '@app/caching': path.resolve(__dirname, 'libs/caching/src'),
       '@app/caching/*': path.resolve(__dirname, 'libs/caching/src/*'),
       '@app/health': path.resolve(__dirname, 'libs/health/src'),
@@ -61,7 +64,7 @@ const config = {
     !process.env.BUILD &&
       new RunScriptWebpackPlugin({
         name: 'main.js',
-        autoRestart: false,
+        autoRestart: true,
       }),
   ].filter(Boolean),
   devServer: {
