@@ -8,6 +8,9 @@ import { CreateUserDto, QueryUserDto } from './dto';
 import { Get } from '@nestjs/common';
 import { Param } from '@nestjs/common';
 import { Query } from '@nestjs/common';
+import { UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
+import { AuthUser, JwtPayloadDto } from '@app/auth-utilities';
 
 @Controller('users')
 export class UsersController {
@@ -37,6 +40,20 @@ export class UsersController {
   })
   findUsers(@Query() query: QueryUserDto) {
     return this.userService.findUsers(query);
+  }
+
+  @Get('profile')
+  @Version('1')
+  @ApiOperation({
+    summary: 'Get user profile',
+    description: "Retrieve the current user's profile",
+  })
+  @ApiOkResponse({
+    description: 'Profile retrieved successfully',
+  })
+  @UseGuards(AuthGuard('jwt-token'))
+  getProfile(@AuthUser() user: JwtPayloadDto) {
+    return this.userService.getProfile(user);
   }
 
   @Get(':id')
