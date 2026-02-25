@@ -10860,7 +10860,7 @@ var Native
 // eslint-disable-next-line no-useless-catch
 try {
   // Wrap this `require()` in a try-catch to avoid upstream bundlers from complaining that this might not be available since it is an optional import
-  Native = __webpack_require__(Object(function __rspack_missing_module() { var e = new Error("Cannot find module 'pg-native'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()))
+  Native = __webpack_require__("?3bd2")
 } catch (e) {
   throw e
 }
@@ -18817,6 +18817,11 @@ module.exports = require("url");
 module.exports = require("util");
 
 },
+"?3bd2"() {
+"use strict";
+/* (ignored) */
+
+},
 "../../node_modules/.pnpm/@prisma+adapter-pg@7.4.1/node_modules/@prisma/adapter-pg/dist/index.mjs"(__unused_rspack___webpack_module__, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -20264,7 +20269,7 @@ __webpack_require__.hu = (chunkId) => ('' + chunkId + '.' + __webpack_require__.
 })();
 // webpack/runtime/get_full_hash
 (() => {
-__webpack_require__.h = () => ("2fbf393b8c4b196b")
+__webpack_require__.h = () => ("126c624b34d76fa3")
 })();
 // webpack/runtime/get_main_filename/update manifest
 (() => {

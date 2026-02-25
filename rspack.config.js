@@ -31,6 +31,7 @@ const config = {
       '@app/caching/*': path.resolve(__dirname, 'libs/caching/src/*'),
       '@app/health': path.resolve(__dirname, 'libs/health/src'),
       '@app/health/*': path.resolve(__dirname, 'libs/health/src/*'),
+      'pg-native': false,
     },
   },
   module: {
