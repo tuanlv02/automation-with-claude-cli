@@ -16326,6 +16326,215 @@ AppService = _ts_decorate([
 
 
 },
+"./src/auth/auth-jwt.service.ts"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+__webpack_require__.d(__webpack_exports__, {
+  AuthJwtService: () => (AuthJwtService)
+});
+/* import */ var _nestjs_common__rspack_import_0 = __webpack_require__("@nestjs/common");
+/* import */ var _nestjs_common__rspack_import_0_default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__rspack_import_0);
+/* import */ var _nestjs_jwt__rspack_import_1 = __webpack_require__("@nestjs/jwt");
+/* import */ var _nestjs_jwt__rspack_import_1_default = /*#__PURE__*/__webpack_require__.n(_nestjs_jwt__rspack_import_1);
+function _class_call_check(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
+function _create_class(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+}
+function _define_property(obj, key, value) {
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
+    return obj;
+}
+function _ts_decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+function _ts_metadata(k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+}
+
+
+var AuthJwtService = /*#__PURE__*/ function() {
+    "use strict";
+    function AuthJwtService(jwtService) {
+        _class_call_check(this, AuthJwtService);
+        _define_property(this, "jwtService", void 0);
+        this.jwtService = jwtService;
+    }
+    _create_class(AuthJwtService, [
+        {
+            key: "generateToken",
+            value: function generateToken(payload) {
+                return this.jwtService.sign(payload);
+            }
+        }
+    ]);
+    return AuthJwtService;
+}();
+AuthJwtService = _ts_decorate([
+    (0,_nestjs_common__rspack_import_0.Injectable)(),
+    _ts_metadata("design:type", Function),
+    _ts_metadata("design:paramtypes", [
+        typeof _nestjs_jwt__rspack_import_1.JwtService === "undefined" ? Object : _nestjs_jwt__rspack_import_1.JwtService
+    ])
+], AuthJwtService);
+
+
+},
+"./src/auth/auth.controller.ts"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+__webpack_require__.d(__webpack_exports__, {
+  AuthController: () => (AuthController)
+});
+/* import */ var _nestjs_common__rspack_import_0 = __webpack_require__("@nestjs/common");
+/* import */ var _nestjs_common__rspack_import_0_default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__rspack_import_0);
+/* import */ var _nestjs_swagger__rspack_import_1 = __webpack_require__("@nestjs/swagger");
+/* import */ var _nestjs_swagger__rspack_import_1_default = /*#__PURE__*/__webpack_require__.n(_nestjs_swagger__rspack_import_1);
+/* import */ var _auth_service__rspack_import_2 = __webpack_require__("./src/auth/auth.service.ts");
+/* import */ var _dto_login_dto__rspack_import_3 = __webpack_require__("./src/auth/dto/login.dto.ts");
+/* import */ var _users_dto__rspack_import_4 = __webpack_require__("./src/users/dto/index.ts");
+function _class_call_check(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
+function _create_class(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+}
+function _define_property(obj, key, value) {
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
+    return obj;
+}
+function _ts_decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+function _ts_metadata(k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+}
+function _ts_param(paramIndex, decorator) {
+    return function(target, key) {
+        decorator(target, key, paramIndex);
+    };
+}
+
+
+
+
+
+var AuthController = /*#__PURE__*/ function() {
+    "use strict";
+    function AuthController(authService) {
+        _class_call_check(this, AuthController);
+        _define_property(this, "authService", void 0);
+        this.authService = authService;
+    }
+    _create_class(AuthController, [
+        {
+            key: "register",
+            value: function register(createUserDto) {
+                return this.authService.register(createUserDto);
+            }
+        },
+        {
+            key: "login",
+            value: function login(loginDto) {
+                return this.authService.login(loginDto.email, loginDto.password);
+            }
+        }
+    ]);
+    return AuthController;
+}();
+_ts_decorate([
+    (0,_nestjs_common__rspack_import_0.Post)('register'),
+    (0,_nestjs_swagger__rspack_import_1.ApiOperation)({
+        summary: 'Register a new user',
+        description: 'Create a new user account and return JWT token'
+    }),
+    (0,_nestjs_swagger__rspack_import_1.ApiOkResponse)({
+        description: 'User registered successfully'
+    }),
+    _ts_param(0, (0,_nestjs_common__rspack_import_0.Body)()),
+    _ts_metadata("design:type", Function),
+    _ts_metadata("design:paramtypes", [
+        typeof _users_dto__rspack_import_4.CreateUserDto === "undefined" ? Object : _users_dto__rspack_import_4.CreateUserDto
+    ]),
+    _ts_metadata("design:returntype", void 0)
+], AuthController.prototype, "register", null);
+_ts_decorate([
+    (0,_nestjs_common__rspack_import_0.Post)('login'),
+    (0,_nestjs_swagger__rspack_import_1.ApiOperation)({
+        summary: 'User login',
+        description: 'Login with email and password, return JWT token'
+    }),
+    (0,_nestjs_swagger__rspack_import_1.ApiOkResponse)({
+        description: 'Login successful'
+    }),
+    _ts_param(0, (0,_nestjs_common__rspack_import_0.Body)()),
+    _ts_metadata("design:type", Function),
+    _ts_metadata("design:paramtypes", [
+        typeof _dto_login_dto__rspack_import_3.LoginDto === "undefined" ? Object : _dto_login_dto__rspack_import_3.LoginDto
+    ]),
+    _ts_metadata("design:returntype", void 0)
+], AuthController.prototype, "login", null);
+AuthController = _ts_decorate([
+    (0,_nestjs_common__rspack_import_0.Controller)('auth'),
+    _ts_metadata("design:type", Function),
+    _ts_metadata("design:paramtypes", [
+        typeof _auth_service__rspack_import_2.AuthService === "undefined" ? Object : _auth_service__rspack_import_2.AuthService
+    ])
+], AuthController);
+
+
+},
 "./src/auth/auth.module.ts"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -16336,7 +16545,17 @@ __webpack_require__.d(__webpack_exports__, {
 /* import */ var _nestjs_common__rspack_import_0_default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__rspack_import_0);
 /* import */ var _nestjs_passport__rspack_import_1 = __webpack_require__("@nestjs/passport");
 /* import */ var _nestjs_passport__rspack_import_1_default = /*#__PURE__*/__webpack_require__.n(_nestjs_passport__rspack_import_1);
-/* import */ var _jwt_token_strategy__rspack_import_2 = __webpack_require__("./src/auth/jwt-token.strategy.ts");
+/* import */ var _nestjs_jwt__rspack_import_2 = __webpack_require__("@nestjs/jwt");
+/* import */ var _nestjs_jwt__rspack_import_2_default = /*#__PURE__*/__webpack_require__.n(_nestjs_jwt__rspack_import_2);
+/* import */ var _nestjs_config__rspack_import_3 = __webpack_require__("@nestjs/config");
+/* import */ var _nestjs_config__rspack_import_3_default = /*#__PURE__*/__webpack_require__.n(_nestjs_config__rspack_import_3);
+/* import */ var _jwt_token_strategy__rspack_import_4 = __webpack_require__("./src/auth/jwt-token.strategy.ts");
+/* import */ var _auth_service__rspack_import_5 = __webpack_require__("./src/auth/auth.service.ts");
+/* import */ var _auth_controller__rspack_import_6 = __webpack_require__("./src/auth/auth.controller.ts");
+/* import */ var _auth_jwt_service__rspack_import_7 = __webpack_require__("./src/auth/auth-jwt.service.ts");
+/* import */ var _users_users_module__rspack_import_8 = __webpack_require__("./src/users/users.module.ts");
+/* import */ var _prisma_module__rspack_import_9 = __webpack_require__("./src/prisma.module.ts");
+/* import */ var _common_enum_environment__rspack_import_10 = __webpack_require__("./src/common/enum/environment.ts");
 function _class_call_check(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
         throw new TypeError("Cannot call a class as a function");
@@ -16351,6 +16570,14 @@ function _ts_decorate(decorators, target, key, desc) {
 
 
 
+
+
+
+
+
+
+
+
 var AuthModule = function AuthModule() {
     "use strict";
     _class_call_check(this, AuthModule);
@@ -16358,16 +16585,419 @@ var AuthModule = function AuthModule() {
 AuthModule = _ts_decorate([
     (0,_nestjs_common__rspack_import_0.Module)({
         imports: [
-            _nestjs_passport__rspack_import_1.PassportModule
+            _nestjs_passport__rspack_import_1.PassportModule,
+            _users_users_module__rspack_import_8.UsersModule,
+            _prisma_module__rspack_import_9.PrismaModule,
+            _nestjs_jwt__rspack_import_2.JwtModule.registerAsync({
+                imports: [
+                    _nestjs_config__rspack_import_3.ConfigModule
+                ],
+                inject: [
+                    _nestjs_config__rspack_import_3.ConfigService
+                ],
+                useFactory: function(configService) {
+                    return {
+                        secret: configService.get(_common_enum_environment__rspack_import_10.ENVIRONMENT.JWT_SECRET),
+                        signOptions: {
+                            expiresIn: configService.get(_common_enum_environment__rspack_import_10.ENVIRONMENT.JWT_EXPIRES_IN)
+                        }
+                    };
+                }
+            })
         ],
         providers: [
-            _jwt_token_strategy__rspack_import_2.JwtTokenStrategy
+            _jwt_token_strategy__rspack_import_4.JwtTokenStrategy,
+            _auth_service__rspack_import_5.AuthService,
+            _auth_jwt_service__rspack_import_7.AuthJwtService
+        ],
+        controllers: [
+            _auth_controller__rspack_import_6.AuthController
         ],
         exports: [
-            _nestjs_passport__rspack_import_1.PassportModule
+            _auth_service__rspack_import_5.AuthService
         ]
     })
 ], AuthModule);
+
+
+},
+"./src/auth/auth.service.ts"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+__webpack_require__.d(__webpack_exports__, {
+  AuthService: () => (AuthService)
+});
+/* import */ var _nestjs_common__rspack_import_0 = __webpack_require__("@nestjs/common");
+/* import */ var _nestjs_common__rspack_import_0_default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__rspack_import_0);
+/* import */ var _prisma_service__rspack_import_1 = __webpack_require__("./src/prisma.service.ts");
+/* import */ var _app_auth_utilities__rspack_import_2 = __webpack_require__("../../libs/auth-utilities/src/index.ts");
+/* import */ var _auth_jwt_service__rspack_import_3 = __webpack_require__("./src/auth/auth-jwt.service.ts");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+    try {
+        var info = gen[key](arg);
+        var value = info.value;
+    } catch (error) {
+        reject(error);
+        return;
+    }
+    if (info.done) {
+        resolve(value);
+    } else {
+        Promise.resolve(value).then(_next, _throw);
+    }
+}
+function _async_to_generator(fn) {
+    return function() {
+        var self = this, args = arguments;
+        return new Promise(function(resolve, reject) {
+            var gen = fn.apply(self, args);
+            function _next(value) {
+                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+            }
+            function _throw(err) {
+                asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+            }
+            _next(undefined);
+        });
+    };
+}
+function _class_call_check(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
+function _create_class(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+}
+function _define_property(obj, key, value) {
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
+    return obj;
+}
+function _ts_decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+function _ts_generator(thisArg, body) {
+    var f, y, t, _ = {
+        label: 0,
+        sent: function() {
+            if (t[0] & 1) throw t[1];
+            return t[1];
+        },
+        trys: [],
+        ops: []
+    }, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype), d = Object.defineProperty;
+    return d(g, "next", {
+        value: verb(0)
+    }), d(g, "throw", {
+        value: verb(1)
+    }), d(g, "return", {
+        value: verb(2)
+    }), typeof Symbol === "function" && d(g, Symbol.iterator, {
+        value: function() {
+            return this;
+        }
+    }), g;
+    function verb(n) {
+        return function(v) {
+            return step([
+                n,
+                v
+            ]);
+        };
+    }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while(g && (g = 0, op[0] && (_ = 0)), _)try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [
+                op[0] & 2,
+                t.value
+            ];
+            switch(op[0]){
+                case 0:
+                case 1:
+                    t = op;
+                    break;
+                case 4:
+                    _.label++;
+                    return {
+                        value: op[1],
+                        done: false
+                    };
+                case 5:
+                    _.label++;
+                    y = op[1];
+                    op = [
+                        0
+                    ];
+                    continue;
+                case 7:
+                    op = _.ops.pop();
+                    _.trys.pop();
+                    continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                        _ = 0;
+                        continue;
+                    }
+                    if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                        _.label = op[1];
+                        break;
+                    }
+                    if (op[0] === 6 && _.label < t[1]) {
+                        _.label = t[1];
+                        t = op;
+                        break;
+                    }
+                    if (t && _.label < t[2]) {
+                        _.label = t[2];
+                        _.ops.push(op);
+                        break;
+                    }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop();
+                    continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) {
+            op = [
+                6,
+                e
+            ];
+            y = 0;
+        } finally{
+            f = t = 0;
+        }
+        if (op[0] & 5) throw op[1];
+        return {
+            value: op[0] ? op[1] : void 0,
+            done: true
+        };
+    }
+}
+function _ts_metadata(k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+}
+
+
+
+
+var AuthService = /*#__PURE__*/ function() {
+    "use strict";
+    function AuthService(prisma, authJwtService) {
+        _class_call_check(this, AuthService);
+        _define_property(this, "prisma", void 0);
+        _define_property(this, "authJwtService", void 0);
+        this.prisma = prisma;
+        this.authJwtService = authJwtService;
+    }
+    _create_class(AuthService, [
+        {
+            key: "register",
+            value: function register(createUserDto) {
+                return _async_to_generator(function() {
+                    var email, password, name, existingUser, hashedPassword, user, token;
+                    return _ts_generator(this, function(_state) {
+                        switch(_state.label){
+                            case 0:
+                                email = createUserDto.email, password = createUserDto.password, name = createUserDto.name;
+                                return [
+                                    4,
+                                    this.prisma.user.findUnique({
+                                        where: {
+                                            email: email
+                                        }
+                                    })
+                                ];
+                            case 1:
+                                existingUser = _state.sent();
+                                if (existingUser) {
+                                    throw new _nestjs_common__rspack_import_0.ConflictException('User with this email already exists');
+                                }
+                                // Hash password
+                                hashedPassword = (0,_app_auth_utilities__rspack_import_2.hashPassword)(password);
+                                return [
+                                    4,
+                                    this.prisma.user.create({
+                                        data: {
+                                            email: email,
+                                            password: hashedPassword,
+                                            name: name
+                                        }
+                                    })
+                                ];
+                            case 2:
+                                user = _state.sent();
+                                // Generate JWT token
+                                token = this.authJwtService.generateToken({
+                                    sub: user.id,
+                                    email: user.email
+                                });
+                                return [
+                                    2,
+                                    {
+                                        message: 'User registered successfully',
+                                        access_token: token,
+                                        user: {
+                                            id: user.id,
+                                            email: user.email,
+                                            name: user.name
+                                        }
+                                    }
+                                ];
+                        }
+                    });
+                }).call(this);
+            }
+        },
+        {
+            key: "login",
+            value: function login(email, password) {
+                return _async_to_generator(function() {
+                    var user, isPasswordValid, token;
+                    return _ts_generator(this, function(_state) {
+                        switch(_state.label){
+                            case 0:
+                                return [
+                                    4,
+                                    this.prisma.user.findUnique({
+                                        where: {
+                                            email: email
+                                        }
+                                    })
+                                ];
+                            case 1:
+                                user = _state.sent();
+                                if (!user) {
+                                    throw new _nestjs_common__rspack_import_0.UnauthorizedException('Invalid credentials');
+                                }
+                                // Verify password
+                                isPasswordValid = (0,_app_auth_utilities__rspack_import_2.verifyPassword)(password, user.password);
+                                if (!isPasswordValid) {
+                                    throw new _nestjs_common__rspack_import_0.UnauthorizedException('Invalid credentials');
+                                }
+                                // Generate JWT token
+                                token = this.authJwtService.generateToken({
+                                    sub: user.id,
+                                    email: user.email
+                                });
+                                return [
+                                    2,
+                                    {
+                                        message: 'Login successful',
+                                        access_token: token,
+                                        user: {
+                                            id: user.id,
+                                            email: user.email,
+                                            name: user.name
+                                        }
+                                    }
+                                ];
+                        }
+                    });
+                }).call(this);
+            }
+        }
+    ]);
+    return AuthService;
+}();
+AuthService = _ts_decorate([
+    (0,_nestjs_common__rspack_import_0.Injectable)(),
+    _ts_metadata("design:type", Function),
+    _ts_metadata("design:paramtypes", [
+        typeof _prisma_service__rspack_import_1.PrismaService === "undefined" ? Object : _prisma_service__rspack_import_1.PrismaService,
+        typeof _auth_jwt_service__rspack_import_3.AuthJwtService === "undefined" ? Object : _auth_jwt_service__rspack_import_3.AuthJwtService
+    ])
+], AuthService);
+
+
+},
+"./src/auth/dto/login.dto.ts"(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+__webpack_require__.d(__webpack_exports__, {
+  LoginDto: () => (LoginDto)
+});
+/* import */ var _nestjs_swagger__rspack_import_0 = __webpack_require__("@nestjs/swagger");
+/* import */ var _nestjs_swagger__rspack_import_0_default = /*#__PURE__*/__webpack_require__.n(_nestjs_swagger__rspack_import_0);
+/* import */ var class_validator__rspack_import_1 = __webpack_require__("class-validator");
+/* import */ var class_validator__rspack_import_1_default = /*#__PURE__*/__webpack_require__.n(class_validator__rspack_import_1);
+function _class_call_check(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
+function _define_property(obj, key, value) {
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
+    return obj;
+}
+function _ts_decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+function _ts_metadata(k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+}
+
+
+var LoginDto = function LoginDto() {
+    "use strict";
+    _class_call_check(this, LoginDto);
+    _define_property(this, "email", void 0);
+    _define_property(this, "password", void 0);
+};
+_ts_decorate([
+    (0,_nestjs_swagger__rspack_import_0.ApiProperty)({
+        description: 'Email',
+        example: 'user@example.com'
+    }),
+    (0,class_validator__rspack_import_1.IsNotEmpty)(),
+    (0,class_validator__rspack_import_1.IsEmail)(),
+    _ts_metadata("design:type", String)
+], LoginDto.prototype, "email", void 0);
+_ts_decorate([
+    (0,_nestjs_swagger__rspack_import_0.ApiProperty)({
+        description: 'Password',
+        example: 'password123'
+    }),
+    (0,class_validator__rspack_import_1.IsNotEmpty)(),
+    (0,class_validator__rspack_import_1.MinLength)(4),
+    _ts_metadata("design:type", String)
+], LoginDto.prototype, "password", void 0);
 
 
 },
@@ -16636,8 +17266,8 @@ var JwtTokenStrategy = /*#__PURE__*/ function(_PassportStrategy) {
             value: function validate(payload) {
                 return _async_to_generator(function() {
                     return _ts_generator(this, function(_state) {
-                        if (!payload || !payload.user_id || !payload.roles || !payload.organization_id) {
-                            throw new _nestjs_common__rspack_import_0.UnauthorizedException('Invalid token payload');
+                        if (!(payload === null || payload === void 0 ? void 0 : payload.sub) || !(payload === null || payload === void 0 ? void 0 : payload.email)) {
+                            throw new _nestjs_common__rspack_import_0.UnauthorizedException('Invalid token');
                         }
                         return [
                             2,
@@ -18692,6 +19322,11 @@ module.exports = require("@nestjs/config");
 module.exports = require("@nestjs/core");
 
 },
+"@nestjs/jwt"(module) {
+"use strict";
+module.exports = require("@nestjs/jwt");
+
+},
 "@nestjs/passport"(module) {
 "use strict";
 module.exports = require("@nestjs/passport");
@@ -20269,7 +20904,7 @@ __webpack_require__.hu = (chunkId) => ('' + chunkId + '.' + __webpack_require__.
 })();
 // webpack/runtime/get_full_hash
 (() => {
-__webpack_require__.h = () => ("126c624b34d76fa3")
+__webpack_require__.h = () => ("1f77a1ea08b3c1e8")
 })();
 // webpack/runtime/get_main_filename/update manifest
 (() => {
