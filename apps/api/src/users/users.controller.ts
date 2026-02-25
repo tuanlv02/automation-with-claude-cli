@@ -10,7 +10,8 @@ import { Param } from '@nestjs/common';
 import { Query } from '@nestjs/common';
 import { UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { AuthUser, JwtPayloadDto } from '@app/auth-utilities';
+import { AuthUser } from '@app/auth-utilities';
+import type { JwtPayloadDto } from '@app/auth-utilities';
 
 @Controller('users')
 export class UsersController {
